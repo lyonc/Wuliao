@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wuliaio.Disrespect.Web", "Wuliaio.Disrespect.Web\Wuliaio.Disrespect.Web.csproj", "{36B7393D-BFE7-43AB-A382-301583E10416}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wuliao.Disrespect.Web", "Wuliao.Disrespect.Web\Wuliao.Disrespect.Web.csproj", "{36B7393D-BFE7-43AB-A382-301583E10416}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
