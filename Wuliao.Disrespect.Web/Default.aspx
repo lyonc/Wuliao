@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" Inherits="Wuliaio.Disrespect.Web.Default" %>
+﻿<%@ Page Language="C#" CodeFile="Default.aspx.cs" Inherits="Wuliaio.Disrespect.Web.Default" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">
