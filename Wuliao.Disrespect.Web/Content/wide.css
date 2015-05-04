@@ -1,0 +1,134 @@
+
+.inline-block {
+	display:inline-block;
+	_display:inline;
+}
+.abs {
+	position:absolute;
+	display:block;
+}
+.l {
+	float:left;
+}
+.r {
+	float:right;
+}
+.hidden {
+	display:none !important;
+}
+.no-select {
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	-o-user-select:none;
+	user-select:none;
+	cursor:default;
+}
+.no-float {
+	float:none !important;
+}
+.wait {
+	cursor:wait !important;
+}
+.wait * {
+	cursor:wait;
+}
+.wide-only {
+	display:none;
+}
+#guide-inner {
+	width:1200px;
+}
+#area-user-guide .tool {
+	padding:0 21px;
+}
+#guide-bar .inner {
+	width:1200px;
+}
+#guide-bar .inner .l a {
+	margin:8px 6px 0 6px;
+}
+#sub-guide-inner {
+	width:1200px;
+}
+#area-search-guide {
+	width:305px;
+	right:0;
+}
+#area-search-guide .ipt-search {
+	width:225px;
+	*width:184px;
+}
+#win-info-guide {
+	right:235px;
+}
+#win-history-guide {
+	right:35px;
+}
+#win-post-guide {
+	right:39px;
+}
+#guide.simple #guide-bar .inner .l a {
+	margin:0 6px;
+}
+#guide.simple #guide-bar .inner .l a.first {
+	margin:9px 12px 0 0;
+}
+#guide.simple #area-user-guide .tool {
+	padding:0 14px;
+}
+#guide.simple #guide-top-bar #area-user-guide {
+	right:0;
+}
+#guide.simple #guide-top-bar #win-info-guide {
+	right:114px;
+}
+#guide.simple #guide-top-bar #win-info-guide .tail {
+	background-position:-32px -113px;
+	left:200px;
+}
+#guide.simple #guide-top-bar #win-history-guide {
+	right:0;
+}
+#guide.simple #guide-top-bar #win-history-guide .tail {
+	background-position:-32px -113px;
+	left:131px;
+}
+#guide.simple #guide-top-bar #win-post-guide {
+	right:0;
+}
+#guide.simple #guide-top-bar #win-post-guide .tail {
+	background-position:-32px -113px;
+	left:36px;
+}
+#guide.simple #area-search-guide {
+	right:179px;
+}
+#guide.simple #area-user-guide .tool {
+	margin:0;
+}
+#guide.simple #a-avatar-guide {
+	margin-left:16px;
+}
+#guide.simple #sub-guide-inner {
+	width:1200px;
+}
+#block-notice-guide .inner {
+	width:1200px;
+}
+#footer-inner {
+	width:1200px;
+}
+#footer-inner .top-footer .l {
+	width:1070px;
+}
+#footer-inner .top-footer .unit {
+	width:188px;
+	padding:8px 0 8px 30px;
+}
+#footer-inner .top-footer .unit-2 {
+	width:127px;
+}
+.wide-only {
+	display:block;
+}

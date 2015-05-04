@@ -80,6 +80,9 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\core.css" />
+    <Content Include="Content\list.css" />
+    <Content Include="Content\wide.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
