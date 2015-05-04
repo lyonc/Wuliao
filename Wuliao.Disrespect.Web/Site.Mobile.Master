@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.Mobile.master.cs" Inherits="Wuliao.Disrespect.Web.MobileSiteMaster" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.Mobile.Master.cs" Inherits="Wuliao.Disrespect.Web.MobileSiteMaster" %>
 <%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
 
 <!DOCTYPE html>
