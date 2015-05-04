@@ -30,7 +30,7 @@
         <div class="col-md-4">
             <h2>拖欠员工工资</h2>
             <p>
-                平时老板作威作福，颐指气使。薪水却发布出来，而且是连续三个月。玩不起就申请破产啊。
+                平时老板作威作福，颐指气使。薪水却发不出来，而且是连续三个月。玩不起就申请破产啊。
             </p>
             <p>
                 <a class="btn btn-default" href="http://wuliao.info">Learn more &raquo;</a>
