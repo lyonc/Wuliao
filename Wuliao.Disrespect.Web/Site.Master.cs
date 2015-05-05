@@ -13,5 +13,10 @@ namespace Wuliao.Disrespect.Web
         {
 
         }
+
+        protected void UnnamedLoggingOut(object sender, LoginCancelEventArgs e)
+        {
+            //Context.GetOwinContext().Authentication.SignOut();
+        }
     }
 }
