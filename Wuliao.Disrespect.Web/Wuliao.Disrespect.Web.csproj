@@ -6,9 +6,11 @@
     <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{36B7393D-BFE7-43AB-A382-301583E10416}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Wuliaio.Disrespect.Web</RootNamespace>
-    <AssemblyName>Wuliaio.Disrespect.Web</AssemblyName>
+    <RootNamespace>Wuliao.Disrespect.Web</RootNamespace>
+    <AssemblyName>Wuliao.Disrespect.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -83,6 +85,7 @@
     <Content Include="Content\core.css" />
     <Content Include="Content\list.css" />
     <Content Include="Content\wide.css" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -112,6 +115,8 @@
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -126,6 +131,8 @@
     <Folder Include="Content\" />
     <Folder Include="Scripts\" />
     <Folder Include="fonts\" />
+    <Folder Include="Account\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\jquery-1.10.2.min.map" />
