@@ -1,1 +1,1 @@
-﻿<%@ Application CodeFile="Global.asax.cs" Inherits="Wuliaio.Disrespect.Web.Global" %>
+﻿<%@ Application CodeFile="Global.asax.cs" Inherits="Wuliao.Disrespect.Web.Global" %>

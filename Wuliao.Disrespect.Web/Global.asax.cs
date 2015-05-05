@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Web;
 using System.Web.SessionState;
 
-namespace Wuliaio.Disrespect.Web
+namespace Wuliao.Disrespect.Web
 {
     public partial class Global : System.Web.HttpApplication
     {
