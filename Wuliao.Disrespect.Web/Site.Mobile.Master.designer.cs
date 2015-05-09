@@ -15,7 +15,7 @@ namespace Wuliao.Disrespect.Web {
 		
 		protected System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
 		
-		protected System.Web.UI.HtmlControls.HtmlForm form1;
+		protected System.Web.UI.HtmlControls.HtmlForm mobileForm;
 		
 		protected System.Web.UI.WebControls.ContentPlaceHolder FeaturedContent;
 		

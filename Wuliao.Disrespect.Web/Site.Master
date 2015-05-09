@@ -13,8 +13,8 @@
     <script src="/Scripts/modernizr-2.6.2.js"></script>
     <script src="/Scripts/respond.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/Site.css" />
 
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
@@ -45,24 +45,24 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About.aspx">About</a></li>
-                        <li><a runat="server" href="~/Contact.aspx">Contact</a></li>
+                        <li><a runat="server" href="/">Home</a></li>
+                        <li><a runat="server" href="/About.aspx">About</a></li>
+                        <li><a runat="server" href="/Contact.aspx">Contact</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                     	<AnonymousTemplate>
                     		<ul class="nav navbar-nav navbar-right">
-                    			<li><a href="~/Account/Register.aspx">Register</a></li>
-                    			<li><a href="~/Account/Login.aspx">Login</a></li>
+                    			<li><a href="/Account/Register.aspx">Register</a></li>
+                    			<li><a href="/Account/Login.aspx">Login</a></li>
                     		</ul>
                     	</AnonymousTemplate>
                     	<LoggedInTemplate>
                     		<ul class="nav navbar-nav navbar-right">
                     			<li>
-                    				<a runat="server" href="~Account/Manage.aspx" title="Manage your account">Hello, Stranger!</a>
+                    				<a runat="server" href="/Account/Manage.aspx" title="Manage your account">Hello, Stranger!</a>
                     			</li>
                     			<li>
-                    				<asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Logout" LogoutPageUrl="~/" OnLoggingOut="UnnamedLoggingOut" />
+                    				<asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Logout" LogoutPageUrl="/" OnLoggingOut="UnnamedLoggingOut" />
                     			</li>
                     		</ul>
                     	</LoggedInTemplate>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="About.aspx.cs" Inherits="Wuliao.Disrespect.Web.About" %>
+﻿<%@ Page Title="About" Language="C#" MasterPageFile="/Site.Master" AutoEventWireup="true" CodeFile="About.aspx.cs" Inherits="Wuliao.Disrespect.Web.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %> Disrespect.</h2>

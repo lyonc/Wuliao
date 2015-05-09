@@ -1,5 +1,5 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.Mobile.Master.cs" Inherits="Wuliao.Disrespect.Web.MobileSiteMaster" %>
-<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+<%@ Register Src="/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -9,7 +9,7 @@
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="mobileForm" runat="server">
     <div>
         <h1>Mobile Master Page</h1>
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
