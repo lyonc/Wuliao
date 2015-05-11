@@ -1,0 +1,173 @@
+﻿@{
+	ViewBag.Title = "和安科技股份有限公司怎么样";
+}
+
+<article>
+	<section class="post-header">
+		<h3 class="post-title">在和安科技股份有限公司工作是一种怎样的体验？</h3>
+		<hr />
+		<div class="row post-info">
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="tilexsm">
+					<div class="tilexsm-image">
+						<span class="fa fa-star"></span>
+					</div>
+					<div class="tilexsm-info">
+						<div class="tilexsm-title byline-name">Lyon Chen</div>
+						<div class="tilexsm-subtitle">
+							<time datetime="2015-05-02 07:08:56Z">西历2015年05月02日 星期六 15:08</time>
+							<small class="text-muted">(Last Edit 2015-05-03 19:42)</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="post-count">
+					<span class="label label-success">1 reads</span>
+					<span class="label label-primary">1 comments</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="gap visible-xs"></div>
+	<section class="post-content">
+		<div class="jumbotron">
+		    <h1>为什么说和安是一家烂公司？</h1>
+		    <p class="lead">因为它真的很烂。</p>
+		</div>
+
+		<div class="row">
+		    <div class="col-md-4">
+		        <h2>代码猴子与人肉测试</h2>
+		        <p>
+		            写代码从来都没有设计书，也从来都不写单元测试。问她为什么不写。她说你讲的都对，但是现在没有。
+		        </p>
+		    </div>
+		    <div class="col-md-4">
+		        <h2>视客户利益如儿戏</h2>
+		        <p>
+		            做医疗软件，竟然完全不注重软件质量。程序频频假死崩溃，账目错乱。
+		        </p>
+		    </div>
+		    <div class="col-md-4">
+		        <h2>拖欠员工工资</h2>
+		        <p>
+		            平时老板作威作福，颐指气使。薪水却发不出来，而且是连续三个月。玩不起就申请破产啊。
+		        </p>
+		    </div>
+		</div>
+	</section>
+	<hr />
+	<section class="post-footer">
+		<div class="button pull-right">
+			<span class="tags-list">
+				<a href="/Category/List/CSharp">C#</a>
+				<a href="/Category/List/ASPNET">ASP.NET</a>
+			</span>
+		</div>
+		<ul class="list-inline">
+			<li>
+				<span class="fa fa-folder-open"></span>
+				<a href="/Tag/List/Disrespect">Disrespect</a>
+			</li>
+		</ul>
+	</section>
+	<section class="post-feedback">
+		<button class="btn btn-info btn-ratings" type="button" data-islike="true">
+			<span class="fa fa-thumbs-up"></span>Like <span class="badge likehits">1</span>
+		</button>
+		<span class="text-muted none ratemessage">感谢您的参与！</span>
+	</section>
+	<hr />
+	<section class="row">
+		<div class="col-md-6">
+			<div class="tilesm">
+				<div class="tilesm-image previous">
+					<span class="fa fa-arrow-left"></span>
+				</div>
+				<div class="tilesm-info previous">
+					<div class="tilesm-title">Older</div>
+					<div class="tilesm-subtitle">
+						<a href="#">This is a Test Link for previous post.</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="tilesm">
+				<div class="tilesm-image next">
+					<span class="fa fa-arrow-right"></span>
+				</div>
+				<div class="tilesm-info next">
+					<div class="tilesm-title">Newer</div>
+					<div class="tilesm-subtitle">
+						<a href="#">This is a Test Link for next post.</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</article>
+
+<div class="gap"></div>
+
+<div class="comment-container">
+	<div class="comment-form">
+		<h3>Comments(1)</h3>
+		<hr />
+		<form id="commit" method="post" action="/Comment/Post"
+		 data-ajax="true" data-ajax-mode="replace" data-ajax-loading="#loadingIndicator"
+		 data-ajax-complete="commentComplete" data-ajax-failure="commentBlowUp" data-ajax-success="commentSuccess"
+		 data-ajax-update="#ajaxTarget" novalidate="novalidate">
+		 	<input id="commentId" type="hidden" value="testGuid" />
+		 	<div class="form-group">
+		 		<div class="row">
+		 			<div class="col-md-4">
+		 				<input class="form-control" id="commentUserName" placeholder="Your Name" type="text"
+		 				 data-val="true" data-val-required="请填入您的姓名。" />
+		 			</div>
+		 			<div class="col-md-8">
+		 				<input class="form-control" id="commentUserEmail" placeholder="Email" type="text"
+		 				data-val="true" data-val-required="请填入您的邮箱地址。"
+		 				data-val-regex="请填入正确格式的Email地址。" />
+		 			</div>
+		 		</div>
+		 	</div>
+		 	<div class="form-group">
+		 		<textarea class="form-control" id="commentContent" placeholder="Leave your message" cols="60" rows="4"
+		 		data-val="true" data-val-required="请填入您的留言。"></textarea>
+		 	</div>
+		 	<div class="form-group input-group">
+		 		<span class="input-group-addon">
+		 			<img alt="captcha" src="Captcha/Image" />
+		 		</span>
+		 		<input class="form-control" id="commentCaptcha" placeholder="Captcha Code" type="text"
+		 		data-val="true" data-val-required="请填入正确的验证码。" />
+		 	</div>
+		 	<div class="form-group">
+		 		<button class="btn btn-primary" type="submit">Submit</button>
+		 		<a class="btn btn-success pull-right" href="/Comment/Get"
+		 		 data-ajax="true" data-ajax-loading="#loadingIndicator"
+		 		 data-ajax-mode="replace" data-ajax-update="#ajaxTarget">Refresh</a>
+		 	</div>
+		 </form>
+	</div>
+	<div class="comment-list" id="ajaxTarget">
+		<ul class="list-unstyled">
+			<li>
+				<hr />
+				<div class="comment-item">
+					<p>
+						<span class="fa fa-user"></span>
+						<strong>Adioooos</strong>
+					</p>
+					<p>This is a Test comment.</p>
+					<span class="text-muted">西历2015年05月11日 星期一 22:51</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="comment-thanks alert alert-success none">
+		感谢您的留言。
+	</div>
+</div>

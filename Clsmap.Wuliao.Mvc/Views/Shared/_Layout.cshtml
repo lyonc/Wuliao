@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>@ViewBag.Title - Lyon Chen's Blog</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/Site.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+</head>
+<body>
+	<header>
+		<div class="navbar-container navbar-fixed-top">
+			<div class="container">
+				<nav class="navbar" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+		                <a class="navbar-brand" href="/">Lyon's Blog</a>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+		                    <li><a href="/Blog/Post"><span class="fa fa-th-list"></span>POSTS</a></li>
+		                    <li><a href="/Blog/Disrespect"><span class="fa fa-thumbs-down"></span>Disrespect</a></li>
+		                    <li><a href="/Blog/Contact"><span class="fa fa-bank"></span>CONTACT</a></li>
+						</ul>
+						@*@Html.Partial("_LoginPartial")*@
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<div class="container content body-content">
+		<section class="col-lg-9">
+			@RenderBody()
+		</section>
+		<aside class="col-lg-3 hidden-xs">
+			@Html.Partial("_AsidePartial")
+		</aside>
+	</div>
+	<hr />
+	<footer>
+		<div class="container">
+        	<p><a href="http://wuliao.info">Wuliao.info</a> &copy; @DateTime.Now.Year - Clsmap Inc. All Rights Reserved.</p>
+		</div>
+	</footer>
+
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+</body>
+</html>
+
