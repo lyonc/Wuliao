@@ -9,7 +9,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Models
+namespace Clsmap.Wuliao.Mvc.Models
 {
     public class Article
     {
@@ -19,11 +19,13 @@ namespace Models
 
         public Guid Id { get; set; }
 
+        public String PostId { get; set; }
+
         public String Writer { get; set; }
 
-        public DateTime PublishTimestamp { get; set; }
+        public DateTime PublishTime { get; set; }
 
-        public DateTime LastEditTimestamp{ get; set; }
+        public DateTime LastEditTime{ get; set; }
 
         public Int32 Reads { get; set; }
 
@@ -35,9 +37,13 @@ namespace Models
 
         public String Content { get; set; }
 
-        public IList<String> Categories { get; set; }
+        public IList<Category> Categories { get; set; }
 
-        public IList<String> Tags{ get; set; }
+        public IList<Tag> Tags{ get; set; }
+
+        public Article PrevPost { get; set; }
+
+        public Article NextPost { get; set; }
     }
 }
 

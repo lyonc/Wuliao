@@ -26,8 +26,8 @@
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-		                    <li><a href="/Blog/Post"><span class="fa fa-th-list"></span>POSTS</a></li>
-		                    <li><a href="/Blog/Disrespect"><span class="fa fa-thumbs-down"></span>Disrespect</a></li>
+		                    <li><a href="/Post/List"><span class="fa fa-th-list"></span>POSTS</a></li>
+		                    <li><a href="/Post/Detail/Disrespect"><span class="fa fa-thumbs-down"></span>Disrespect</a></li>
 		                    <li><a href="/Blog/Contact"><span class="fa fa-bank"></span>CONTACT</a></li>
 						</ul>
 						@*@Html.Partial("_LoginPartial")*@
@@ -37,12 +37,14 @@
 		</div>
 	</header>
 	<div class="container content body-content">
-		<section class="col-lg-9">
-			@RenderBody()
-		</section>
-		<aside class="col-lg-3 hidden-xs">
-			@Html.Partial("_AsidePartial")
-		</aside>
+		<div class="row">
+			<section class="col-lg-9">
+				@RenderBody()
+			</section>
+			<aside class="col-lg-3 hidden-xs">
+				@Html.Partial("_AsidePartial")
+			</aside>
+		</div>
 	</div>
 	<hr />
 	<footer>

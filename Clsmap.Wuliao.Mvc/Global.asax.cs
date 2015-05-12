@@ -17,7 +17,7 @@ namespace Clsmap.Wuliao.Mvc
             routes.MapRoute(
                 "Default",
                 "{controller}/{action}/{id}",
-                new { controller = "Blog", action = "Disrespect", id = "" }
+                new { controller = "Post", action = "Detail", id = "" }
             );
 
         }

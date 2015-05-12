@@ -1,0 +1,163 @@
+﻿@model Clsmap.Wuliao.Mvc.Models.Article
+@using Clsmap.Wuliao.Mvc.Utilities
+
+@{
+	ViewBag.Title = Model.Title;
+}
+
+<article>
+	<section class="post-header">
+		<h3 class="post-title">@Model.Title</h3>
+		<hr />
+		<div class="row post-info">
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="tilexsm">
+					<div class="tilexsm-image">
+						<span class="fa fa-star"></span>
+					</div>
+					<div class="tilexsm-info">
+						<div class="tilexsm-title byline-name">@Model.Writer</div>
+						<div class="tilexsm-subtitle">
+							<time datetime="2015-05-02 07:08:56Z">@Model.PublishTime.ToTimestamp()</time>
+							<small class="text-muted">(Last Edit @Model.LastEditTime.ToString("yyyy-MM-dd HH:mm"))</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="post-count">
+					<span class="label label-success">@Model.Reads reads</span>
+					<span class="label label-primary">@Model.Comments comments</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="gap visible-xs"></div>
+	<section class="post-content">
+		@Html.Raw(Model.Content)
+	</section>
+	<hr />
+	<section class="post-footer">
+		<div class="button pull-right">
+			<span class="tags-list">
+				@foreach (var tag in Model.Tags) {
+                	<a href="/Tag/List/@(tag.LinkName)">@tag.Name</a>
+                }
+			</span>
+		</div>
+		<ul class="list-inline">
+			@foreach (var category in Model.Categories) {
+            	<li>
+					<span class="fa fa-folder-open"></span>
+            		<a href="/Category/List/@(category.LinkName)">@category.Name</a>
+            	</li>
+            }
+		</ul>
+	</section>
+	<section class="post-feedback">
+		<button class="btn btn-info btn-ratings" type="button" data-islike="true">
+			<span class="fa fa-thumbs-up"></span>Awesome <span class="badge likehits">@Model.Likes</span>
+		</button>
+		<span class="text-muted none ratemessage">感谢您的参与！</span>
+	</section>
+	<hr />
+	<section class="row">
+		<div class="col-md-6">
+			<div class="tilesm">
+				<div class="tilesm-image previous">
+					<span class="fa fa-arrow-left"></span>
+				</div>
+				<div class="tilesm-info previous">
+					<div class="tilesm-title">Older</div>
+					<div class="tilesm-subtitle">
+						@if (Model.PrevPost == null) {
+							<p>None</p>
+						} else {
+							<a href="/Post/Detail/@(Model.PrevPost.PostId)">@Model.PrevPost.Title</a>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="tilesm">
+				<div class="tilesm-image next">
+					<span class="fa fa-arrow-right"></span>
+				</div>
+				<div class="tilesm-info next">
+					<div class="tilesm-title">Newer</div>
+					<div class="tilesm-subtitle">
+						@if (Model.NextPost == null) {
+							<p>None</p>
+						} else {
+							<a href="/Post/Detail/@(Model.NextPost.PostId)">@Model.NextPost.Title</a>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</article>
+
+<div class="gap"></div>
+
+<div class="comment-container">
+	<div class="comment-form">
+		<h3>Comments(1)</h3>
+		<hr />
+		<form id="commit" method="post" action="/Comment/Post"
+		 data-ajax="true" data-ajax-mode="replace" data-ajax-loading="#loadingIndicator"
+		 data-ajax-complete="commentComplete" data-ajax-failure="commentBlowUp" data-ajax-success="commentSuccess"
+		 data-ajax-update="#ajaxTarget" novalidate="novalidate">
+		 	<input id="commentId" type="hidden" value="testGuid" />
+		 	<div class="form-group">
+		 		<div class="row">
+		 			<div class="col-md-4">
+		 				<input class="form-control" id="commentUserName" placeholder="Your Name" type="text"
+		 				 data-val="true" data-val-required="请填入您的姓名。" />
+		 			</div>
+		 			<div class="col-md-8">
+		 				<input class="form-control" id="commentUserEmail" placeholder="Email" type="text"
+		 				data-val="true" data-val-required="请填入您的邮箱地址。"
+		 				data-val-regex="请填入正确格式的Email地址。" />
+		 			</div>
+		 		</div>
+		 	</div>
+		 	<div class="form-group">
+		 		<textarea class="form-control" id="commentContent" placeholder="Leave your message" cols="60" rows="4"
+		 		data-val="true" data-val-required="请填入您的留言。"></textarea>
+		 	</div>
+		 	<div class="form-group input-group">
+		 		<span class="input-group-addon">
+		 			<img alt="captcha" src="Captcha/Image" />
+		 		</span>
+		 		<input class="form-control" id="commentCaptcha" placeholder="Captcha Code" type="text"
+		 		data-val="true" data-val-required="请填入正确的验证码。" />
+		 	</div>
+		 	<div class="form-group">
+		 		<button class="btn btn-primary" type="submit">Submit</button>
+		 		<a class="btn btn-success pull-right" href="/Comment/Get"
+		 		 data-ajax="true" data-ajax-loading="#loadingIndicator"
+		 		 data-ajax-mode="replace" data-ajax-update="#ajaxTarget">Refresh</a>
+		 	</div>
+		 </form>
+	</div>
+	<div class="comment-list" id="ajaxTarget">
+		<ul class="list-unstyled">
+			<li>
+				<hr />
+				<div class="comment-item">
+					<p>
+						<span class="fa fa-user"></span>
+						<strong>Adioooos</strong>
+					</p>
+					<p>This is a Test comment.</p>
+					<span class="text-muted">西历2015年05月11日 星期一 22:51</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="comment-thanks alert alert-success none">
+		感谢您的留言。
+	</div>
+</div>
