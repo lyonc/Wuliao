@@ -17,11 +17,6 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
 
 
 /* Redifined Styles*/
@@ -42,6 +37,7 @@ footer {
 body{
 	color: #444;
 	padding-top: 42px;
+	font-family:"Helvetica Neue", "Helvetica", "Microsoft Yahei", "Segoe UI", "Verdana";
 }
 
 @media(min-width: 768px) and (max-width: 992px) {
