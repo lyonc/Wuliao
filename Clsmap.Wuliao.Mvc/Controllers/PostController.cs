@@ -48,7 +48,7 @@ namespace Clsmap.Wuliao.Mvc.Controllers
                 Likes = 1,
                 Title = "和安科技股份有限公司怎么样？",
                 Content = @"
-        <div class=""jumbotron"">
+        <div>
             <h1>为什么说和安是一家烂公司？</h1>
             <p class=""lead"">因为它真的很烂。</p>
         </div>

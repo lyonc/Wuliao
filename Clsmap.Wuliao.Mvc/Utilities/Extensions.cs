@@ -73,12 +73,14 @@ namespace Clsmap.Wuliao.Mvc.Utilities
     {
         public static String ToTimestamp(this DateTime dateTime)
         {
-            const String format = "西历{0:0000}年{1:00}月{2:00}日 {3} {4:00}:{5:00}";
+            return dateTime.ToString("西历yyyy年MM月dd日 dddd HH:mm", new CultureInfo("zh-CN"));
 
-            return String.Format(format, 
-                dateTime.Year, dateTime.Month, dateTime.Day, 
-                dateTime.DayOfWeek.ToString(), 
-                dateTime.Hour, dateTime.Minute);
+//            const String format = "西历{0:0000}年{1:00}月{2:00}日 {3} {4:00}:{5:00}";
+//
+//            return String.Format(format, 
+//                dateTime.Year, dateTime.Month, dateTime.Day, 
+//                dateTime.DayOfWeek.ToString(), 
+//                dateTime.Hour, dateTime.Minute);
         }
 
     }
