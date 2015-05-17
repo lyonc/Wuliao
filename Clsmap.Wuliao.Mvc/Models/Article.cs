@@ -17,11 +17,11 @@ namespace Clsmap.Wuliao.Mvc.Models
         {
         }
 
-        public Guid Id { get; set; }
+        public Int32 Id { get; set; }
 
         public String PostId { get; set; }
 
-        public String Writer { get; set; }
+        public String WriterName { get; set; }
 
         public DateTime PublishTime { get; set; }
 
@@ -29,21 +29,15 @@ namespace Clsmap.Wuliao.Mvc.Models
 
         public Int32 Reads { get; set; }
 
-        public Int32 Comments { get; set; }
-
         public Int32 Likes { get; set; }
 
         public String Title { get; set; }
 
         public String Content { get; set; }
 
-        public IList<Category> Categories { get; set; }
+        public Int32 PrevPostId { get; set; } = -1;
 
-        public IList<Tag> Tags{ get; set; }
-
-        public Article PrevPost { get; set; }
-
-        public Article NextPost { get; set; }
+        public Int32 NextPostId { get; set; } = -1;
     }
 }
 

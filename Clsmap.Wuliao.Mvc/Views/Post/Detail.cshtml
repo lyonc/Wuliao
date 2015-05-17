@@ -1,13 +1,13 @@
-﻿@model Clsmap.Wuliao.Mvc.Models.Article
+﻿@model Clsmap.Wuliao.Mvc.Models.PostViewModel
 @using Clsmap.Wuliao.Mvc.Utilities
 
 @{
-	ViewBag.Title = Model.Title;
+	ViewBag.Title = Model.Article.Title;
 }
 
 <article>
 	<section class="post-header">
-		<h3 class="post-title">@Model.Title</h3>
+		<h3 class="post-title">@Model.Article.Title</h3>
 		<hr />
 		<div class="row post-info">
 			<div class="col-md-6 col-sm-6 col-xs-12">
@@ -16,25 +16,25 @@
 						<span class="fa fa-star"></span>
 					</div>
 					<div class="tilexsm-info">
-						<div class="tilexsm-title byline-name">@Model.Writer</div>
+						<div class="tilexsm-title byline-name">@Model.Writer.Name</div>
 						<div class="tilexsm-subtitle">
-							<time datetime="2015-05-02 07:08:56Z">@Model.PublishTime.ToTimestamp()</time>
-							<small class="text-muted">(Last Edit @Model.LastEditTime.ToString("yyyy-MM-dd HH:mm"))</small>
+							<time datetime="@(Model.Article.PublishTime)">@Model.Article.PublishTime.ToTimestamp()</time>
+							<small class="text-muted">(Last Edit @Model.Article.LastEditTime.ToString("yyyy-MM-dd HH:mm"))</small>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-12">
 				<div class="post-count">
-					<span class="label label-success">@Model.Reads reads</span>
-					<span class="label label-primary">@Model.Comments comments</span>
+					<span class="label label-success">@Model.Article.Reads reads</span>
+					<span class="label label-primary">@Model.Comments.Count comments</span>
 				</div>
 			</div>
 		</div>
 	</section>
 	<div class="gap visible-xs"></div>
 	<section class="post-content">
-		@Html.Raw(Model.Content)
+		@Html.Raw(Model.Article.Content)
 	</section>
 	<hr />
 	<section class="post-footer">
@@ -46,17 +46,17 @@
 			</span>
 		</div>
 		<ul class="list-inline">
-			@foreach (var category in Model.Categories) {
+			@foreach (var topic in Model.Topics) {
             	<li>
 					<span class="fa fa-folder-open"></span>
-            		<a href="/Category/List/@(category.LinkName)">@category.Name</a>
+            		<a href="/Topic/List/@(topic.LinkName)">@topic.Name</a>
             	</li>
             }
 		</ul>
 	</section>
 	<section class="post-feedback">
 		<button class="btn btn-info btn-ratings" type="button" data-islike="true">
-			<span class="fa fa-thumbs-up"></span>Awesome <span class="badge likehits">@Model.Likes</span>
+			<span class="fa fa-thumbs-up"></span>Awesome <span class="badge likehits">@Model.Article.Likes</span>
 		</button>
 		<span class="text-muted none ratemessage">感谢您的参与！</span>
 	</section>
@@ -103,21 +103,21 @@
 
 <div class="comment-container">
 	<div class="comment-form">
-		<h3>Comments(1)</h3>
+		<h3>Comments(@Model.Comments.Count)</h3>
 		<hr />
 		<form id="commit" method="post" action="/Comment/Post"
 		 data-ajax="true" data-ajax-mode="replace" data-ajax-loading="#loadingIndicator"
 		 data-ajax-complete="commentComplete" data-ajax-failure="commentBlowUp" data-ajax-success="commentSuccess"
 		 data-ajax-update="#ajaxTarget" novalidate="novalidate">
-		 	<input id="commentId" type="hidden" value="testGuid" />
+		 	<input id="articleId" type="hidden" value="@(Model.Article.Id)" />
 		 	<div class="form-group">
 		 		<div class="row">
 		 			<div class="col-md-4">
-		 				<input class="form-control" id="commentUserName" placeholder="Your Name" type="text"
+		 				<input class="form-control" id="commentReaderName" placeholder="Your Name" type="text"
 		 				 data-val="true" data-val-required="请填入您的姓名。" />
 		 			</div>
 		 			<div class="col-md-8">
-		 				<input class="form-control" id="commentUserEmail" placeholder="Email" type="text"
+		 				<input class="form-control" id="commentReaderEmail" placeholder="Email" type="text"
 		 				data-val="true" data-val-required="请填入您的邮箱地址。"
 		 				data-val-regex="请填入正确格式的Email地址。" />
 		 			</div>
@@ -129,7 +129,14 @@
 		 	</div>
 		 	<div class="form-group input-group">
 		 		<span class="input-group-addon">
-		 			<img alt="captcha" src="Captcha/Image" />
+		 			<img id="captcha" alt="captcha" src="/Captcha/Image" />
+		 			<script type="text/javascript">
+		 				$(function() {
+		 					$("#captcha").bind("click", function() {
+		 						this.src = "/Captcha/Image?time=" + (new Date()).getTime();
+		 					});
+		 				});
+		 			</script>
 		 		</span>
 		 		<input class="form-control" id="commentCaptcha" placeholder="Captcha Code" type="text"
 		 		data-val="true" data-val-required="请填入正确的验证码。" />
@@ -144,17 +151,19 @@
 	</div>
 	<div class="comment-list" id="ajaxTarget">
 		<ul class="list-unstyled">
-			<li>
-				<hr />
-				<div class="comment-item">
-					<p>
-						<span class="fa fa-user"></span>
-						<strong>Adioooos</strong>
-					</p>
-					<p>This is a Test comment.</p>
-					<span class="text-muted">西历2015年05月11日 星期一 22:51</span>
-				</div>
-			</li>
+			@foreach (var comment in Model.Comments) {
+				<li>
+					<hr />
+					<div class="comment-item">
+						<p>
+							<span class="fa fa-user"></span>
+							<strong>@comment.ReaderName</strong>
+						</p>
+						<p>@comment.Content</p>
+						<span class="text-muted">@comment.PostTime.ToTimestamp()</span>
+					</div>
+				</li>
+            }
 		</ul>
 	</div>
 	<div class="comment-thanks alert alert-success none">

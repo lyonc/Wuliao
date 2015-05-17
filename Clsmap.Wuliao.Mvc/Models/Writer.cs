@@ -1,4 +1,4 @@
-﻿// Category.cs
+﻿// Writer.cs
 //
 // Author:
 //       Lyon <qinhutu@gmail.com>
@@ -10,15 +10,19 @@ using System;
 
 namespace Clsmap.Wuliao.Mvc.Models
 {
-    public class Category
+    public class Writer
     {
-        public Category()
+        public Writer()
         {
         }
 
-        public String LinkName{ get; set; }
+        public Int32 Id{ get; set; }
 
         public String Name { get; set; }
+
+        public String Email { get; set; }
+
+        public String DisplayName { get; set; }
     }
 }
 

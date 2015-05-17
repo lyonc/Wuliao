@@ -15,21 +15,22 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
+    <DefineConstants>DEBUG;ASYNC;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <DefineConstants>ASYNC;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -62,6 +63,11 @@
     <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.0\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.9.6\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
@@ -71,6 +77,7 @@
     <Folder Include="Utilities\" />
     <Folder Include="Views\Post\" />
     <Folder Include="Views\Blog\" />
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -85,8 +92,22 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="App_Data\Dapper.cs" />
+    <Compile Include="App_Data\DapperAsyc.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Reader.cs" />
+    <Compile Include="Models\Topic.cs" />
+    <Compile Include="Models\Writer.cs" />
+    <Compile Include="App_Data\DbAccess.cs" />
+    <Compile Include="App_Data\DbAccess.Post.cs" />
+    <Compile Include="App_Data\DbAccess.Numbering.cs" />
+    <Compile Include="Utilities\Converters.cs" />
+    <Compile Include="Models\PostViewModel.cs" />
+    <Compile Include="Controllers\CaptchaController.cs" />
+    <Compile Include="Utilities\CaptchaGenerator.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="App_Data\DbAccess.Comment.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -123,6 +144,9 @@
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="PrefixedHierarchical" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
         <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
       </Properties>
     </MonoDevelop>
